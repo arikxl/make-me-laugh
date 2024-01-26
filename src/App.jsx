@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react'
 
 import './App.css'
@@ -7,14 +8,18 @@ import Input from './components/Input'
 import ScoreBar from './components/ScoreBar'
 
 function App() {
-  const [score, setscore] = useState(75)
-
+  const [score, setScore] = useState(0)
+  const [count, setCount] = useState(0)
+  const [joke, setJoke] = useState('');
+  const [jokeRate, setJokeRate] = useState(0);
+  const [aiResponse, setAiResponse] = useState('');
+  
   return (
     <div className="app">
       <main>
-        <Gifs />
-        <Response />
-        <Input />
+        <Gifs count={count} />
+        <Response aiResponse={aiResponse} jokeRate={jokeRate } />
+        <Input setJoke={setJoke} setJokeRate={setJokeRate} setAiResponse={setAiResponse} setScore={setScore} />
       </main>
 
       <aside>
