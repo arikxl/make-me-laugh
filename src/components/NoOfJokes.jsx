@@ -5,7 +5,13 @@ const NoOfJokes = ({ count }) => {
         <>
             {
                 count > 0
-                    ? (<div className="no-of-jokes">{count}</div>)
+                    ? (<div
+                        className={`${count> 9
+                            ? 'no-of-jokes small'
+                            : count === 6 || count === 9 ? 'underline no-of-jokes'
+                            :'no-of-jokes'}`}
+                    >
+                        { count >10 ? 'FINISH' : count === 10 ? 'Last One' : count}</div>)
                     : null
             }
         </>

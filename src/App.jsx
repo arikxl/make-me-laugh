@@ -10,16 +10,15 @@ import ScoreBar from './components/ScoreBar'
 function App() {
   const [score, setScore] = useState(0)
   const [count, setCount] = useState(0)
-  const [joke, setJoke] = useState('');
   const [jokeRate, setJokeRate] = useState(0);
   const [aiResponse, setAiResponse] = useState('');
   
   return (
     <div className="app">
       <main>
-        <Gifs count={count} />
-        <Response aiResponse={aiResponse} jokeRate={jokeRate } />
-        <Input setJoke={setJoke} setJokeRate={setJokeRate} setAiResponse={setAiResponse} setScore={setScore} />
+        <Gifs count={count} jokeRate={jokeRate} />
+        <Response aiResponse={aiResponse}  />
+        <Input setScore={setScore} score={score} setCount={setCount} count={count} setJokeRate={setJokeRate} setAiResponse={setAiResponse} />
       </main>
 
       <aside>

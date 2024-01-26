@@ -118,11 +118,37 @@ aside{
   100% { transform: rotate(360deg); }
 }
 
+.small{
+  font-size:10px;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+
+
+.joke-rate{
+  font-size:140px;
+  position: absolute;
+  top: 10px;
+  right: 10%;
+  opacity: 0; /* Start with opacity set to 0 */
+  animation: fadeInAnimation 6s ease-in forwards;
+}
+
+@keyframes fadeInAnimation {
+  from { opacity: 0; } /* Start with opacity set to 0 */
+  to { opacity: 1; } /* End with opacity set to 1 */
+}
 
 
 
 .response{
   height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .input{
   height: 20%;
@@ -136,6 +162,7 @@ aside{
   border-radius: 20px;
   font-size: 24px;
   padding: 5px 20px;
+  text-align: right;
 }
 .input button{
   color:white;
@@ -148,13 +175,24 @@ aside{
   flex-direction: column;
   justify-content: flex-end;
   transition: 0.5s;
+  position: relative;
+  align-items: center;
+}
+
+.record{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  border-bottom: solid white;
+  width: 100%;
 }
 
 .inner-height{
   transition: 0.5s;
-  background-color: red;
   width: 100%;
   border-radius: 0 0 20px 20px;
+  color:black;
+  font-size: 32px;
 }
 
 

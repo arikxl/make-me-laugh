@@ -1,8 +1,5 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-constant-condition */
-/* eslint-disable no-extra-boolean-cast */
-/* eslint-disable no-func-assign */
-function _0x3402(_0x323d5f,_0x324b8a){const _0x2139bb=_0x2139();return _0x3402=function(_0x3402c,_0x22ecb0){_0x3402c=_0x3402c-0xfd;let _0x15f780=_0x2139bb[_0x3402c];return _0x15f780;},_0x3402(_0x323d5f,_0x324b8a);}const _0x56c988=_0x3402;(function(_0x3e99dc,_0x512f9c){const _0xadcc7d=_0x3402,_0x1ea66f=_0x3e99dc();while(!![]){try{const _0x4990a3=parseInt(_0xadcc7d(0x102))/0x1+parseInt(_0xadcc7d(0xfe))/0x2+-parseInt(_0xadcc7d(0x106))/0x3*(-parseInt(_0xadcc7d(0x100))/0x4)+parseInt(_0xadcc7d(0x101))/0x5+-parseInt(_0xadcc7d(0x105))/0x6+-parseInt(_0xadcc7d(0x104))/0x7*(parseInt(_0xadcc7d(0xff))/0x8)+parseInt(_0xadcc7d(0xfd))/0x9*(-parseInt(_0xadcc7d(0x103))/0xa);if(_0x4990a3===_0x512f9c)break;else _0x1ea66f['push'](_0x1ea66f['shift']());}catch(_0x2e0561){_0x1ea66f['push'](_0x1ea66f['shift']());}}}(_0x2139,0xbe125));import _0x7239c2 from'openai';const openai=new _0x7239c2({'apiKey':_0x56c988(0x107),'dangerouslyAllowBrowser':!![]});function _0x2139(){const _0xa384c2=['649565KmSURa','43370UvsjhB','7gMyqJg','4453350GouAKF','20742umrySS','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','1719vXxTgz','590606GxnRyR','956504ZUSFwj','724dKnynC','1361930DOLhyy'];_0x2139=function(){return _0xa384c2;};return _0x2139();}
+const _0x2acd8a=_0x20a1;function _0x205b(){const _0xa62e83=['349930cxrqMF','1116801jfNKdf','112KyfoVt','7956368drfiWd','201033HQFzoz','169392MlJYrO','3300829FAnpPj','1234567890,mnbvcx1234567','70360NrJXSg','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'];_0x205b=function(){return _0xa62e83;};return _0x205b();}function _0x20a1(_0x5bc645,_0x51acde){const _0x205bf4=_0x205b();return _0x20a1=function(_0x20a15f,_0xe934bc){_0x20a15f=_0x20a15f-0x131;let _0xaf9ec9=_0x205bf4[_0x20a15f];return _0xaf9ec9;},_0x20a1(_0x5bc645,_0x51acde);}(function(_0x44b823,_0x238ae9){const _0x2df2d3=_0x20a1,_0x2f3223=_0x44b823();while(!![]){try{const _0x93ad78=parseInt(_0x2df2d3(0x136))/0x1+-parseInt(_0x2df2d3(0x132))/0x2+parseInt(_0x2df2d3(0x133))/0x3+-parseInt(_0x2df2d3(0x134))/0x4*(-parseInt(_0x2df2d3(0x13a))/0x5)+-parseInt(_0x2df2d3(0x137))/0x6+parseInt(_0x2df2d3(0x138))/0x7+-parseInt(_0x2df2d3(0x135))/0x8;if(_0x93ad78===_0x238ae9)break;else _0x2f3223['push'](_0x2f3223['shift']());}catch(_0x3517e4){_0x2f3223['push'](_0x2f3223['shift']());}}}(_0x205b,0x3ade0));import _0x25f89d from'openai';const key=_0x2acd8a(0x139),openai=new _0x25f89d({'apiKey':_0x2acd8a(0x131),'dangerouslyAllowBrowser':!![]});
+
 
 
 export const rateTheJoke = async (joke) => {
@@ -24,3 +21,15 @@ export const rateTheJoke = async (joke) => {
     console.error(error)
   }
 }
+
+// export async function rateTheJoke11() {
+//   const completion = await openai.chat.completions.create({
+//     messages: [{"role": "system", "content": "You are a helpful assistant."},
+//         {"role": "user", "content": "Who won the world series in 2020?"},
+//         {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
+//         {"role": "user", "content": "Where was it played?"}],
+//     model: "gpt-3.5-turbo",
+//   });
+
+//   console.log(completion.choices[0]);
+// }
