@@ -8,19 +8,20 @@ import { getGif } from '../service/giphy';
 const Input = ({ setGif, setScore, score, setJokeRate, setAiResponse, count, setCount }) => {
 
   const [text, setText] = useState('');
+  const [enText, setEnText] = useState('');
 
   const handleGo = () => {
-    if ( text === '' || text.length < 10) return;
+    if (text === '' || text.length < 10) return;
     
     const fetchJokeRate = async () => {
       try {
-        const rate = await rateTheJoke(text);
-        typeof (rate) === 'number' ? setJokeRate(rate) : setJokeRate(7);
-        const rnd = Math.ceil(Math.random() * 10);
+        await translate(text)
+        const rate = await rateTheJoke(enText);
+        typeof (rate) === 'number' ? setJokeRate(rate) : setJokeRate(Math.random() *10);
+        const rnd = Math.floor(Math.random() * jokeResponse[rate].length);
         setAiResponse(jokeResponse[rate][rnd])
-        // await console.log('AAAAA', getGif(jokeResponse[rate][rnd]))
-        const newGif =await  getGif(jokeResponse[rate][rnd])
-         setGif(newGif);
+        const newGif = await  getGif(jokeResponse[rate][rnd])
+        setGif(newGif);
         setScore(rate + score);
         setCount(count += 1)
       } catch (error) {
@@ -60,7 +61,7 @@ const Input = ({ setGif, setScore, score, setJokeRate, setAiResponse, count, set
     console.log('Speech recognition started.');
 
     // Set a timer to stop recognition after 10 seconds (adjust as needed)
-    timerId = setTimeout(stopRecognition, 10000);
+    timerId = setTimeout(stopRecognition, 15000);
   }
 
 
@@ -74,6 +75,12 @@ const Input = ({ setGif, setScore, score, setJokeRate, setAiResponse, count, set
     clearTimeout(timerId);
   }
 
+  function translate(movie) {
+    let apiUrl = `https://api.mymemory.translated.net/get?q=${movie}&langpair=he-IL|en-US`;
+    fetch(apiUrl).then(res => res.json()).then(data => {
+      setEnText(data.responseData.translatedText)
+    })
+  }
 
 
 
@@ -83,7 +90,7 @@ const Input = ({ setGif, setScore, score, setJokeRate, setAiResponse, count, set
       <button disabled={count > 9} onClick={startRecognition}>
         🎙️
         <br />
-        10s
+        15s
       </button>
       <textarea disabled={count > 9} rows="5" onChange={(e) => setText(e.target.value)} value={text} />
 

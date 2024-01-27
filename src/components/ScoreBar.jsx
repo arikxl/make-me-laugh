@@ -3,10 +3,10 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-const ScoreBar = ({ score }) => {
-  
-  const [record, setRecord] = useState(33);
-  
+const ScoreBar = ({ score, setConf }) => {
+
+  const [record, setRecord] = useState(+localStorage.getItem('ggj-record') ||0);
+
   function numberToColorHsl(value) {
     // Convert value to a range between 0 and 120 (green to red in HSL)
     const hue = (value * 1.2).toString(10);
@@ -16,20 +16,26 @@ const ScoreBar = ({ score }) => {
 
   const newRecord = () => {
     setRecord(score)
+    localStorage.setItem('ggj-record', score);
+    setConf(true)
   }
 
   useEffect(() => {
-    if(score > record) newRecord();
-  },[score])
-  
+    if (score > record) newRecord();
+  }, [score])
+
   return (
     <section className="score-bar"
-    style={{}}>
-    <p className="record" style={{top:`${100-record}%`}}>Record({record})</p>
+      style={{}}>
+
+      <p className="record" style={{ top: `${95 - record}%` }}>
+        Record({record})
+      </p>
       <div className="inner-height"
         style={{
-          height: `${score}%`, backgroundColor: numberToColorHsl(score) }}>
-            { score >0 && score}
+          height: `${score}%`, backgroundColor: numberToColorHsl(score)
+        }}>
+        {score > 0 && score}
 
       </div>
     </section>

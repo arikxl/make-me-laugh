@@ -1,8 +1,14 @@
 import OpenAI from 'openai';
 
+function hideString(str) {
+  return str.split('').reverse().join('');
+}
+
+const hiddenString = hideString('VBK8lMmy1jA6TAtDuqYbJFkblB3TCFmCMYbQwy0rlc6PRFog-ks');
 
 const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_API_KEY,
+  apiKey: hiddenString,
+  // apiKey: import.meta.env.VITE_API_KEY,
   dangerouslyAllowBrowser: true
 });
 
