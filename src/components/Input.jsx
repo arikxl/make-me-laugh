@@ -3,8 +3,9 @@ import { useState } from 'react'
 
 import { rateTheJoke } from '../service/openai';
 import { jokeResponse } from '../data/data';
+import { getGif } from '../service/giphy';
 
-const Input = ({ setScore, score, setJokeRate, setAiResponse, count, setCount }) => {
+const Input = ({ setGif, setScore, score, setJokeRate, setAiResponse, count, setCount }) => {
 
   const [text, setText] = useState('');
 
@@ -15,7 +16,11 @@ const Input = ({ setScore, score, setJokeRate, setAiResponse, count, setCount })
       try {
         const rate = await rateTheJoke(text);
         typeof (rate) === 'number' ? setJokeRate(rate) : setJokeRate(7);
-        setAiResponse(jokeResponse[rate][Math.ceil(Math.random() * 10)])
+        const rnd = Math.ceil(Math.random() * 10);
+        setAiResponse(jokeResponse[rate][rnd])
+        // await console.log('AAAAA', getGif(jokeResponse[rate][rnd]))
+        const newGif =await  getGif(jokeResponse[rate][rnd])
+         setGif(newGif);
         setScore(rate + score);
         setCount(count += 1)
       } catch (error) {
@@ -74,6 +79,7 @@ const Input = ({ setScore, score, setJokeRate, setAiResponse, count, setCount })
 
   return (
     <section className="input">
+      {/* <button onClick={() => setGif('aaaaaaaasddsdfsdf')}>AAA</button> */}
       <button disabled={count > 10} onClick={startRecognition}>
         🎙️
         <br />

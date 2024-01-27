@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import './App.css'
 import Gifs from './components/Gifs'
@@ -12,13 +12,19 @@ function App() {
   const [count, setCount] = useState(0)
   const [jokeRate, setJokeRate] = useState(0);
   const [aiResponse, setAiResponse] = useState('');
+  const [gif, setGif] = useState();
+  
+  useEffect(() => {
+    console.log('gifasasasa:', gif)
+    
+  },[gif])
   
   return (
     <div className="app">
       <main>
-        <Gifs count={count} jokeRate={jokeRate} />
+        <Gifs count={count} jokeRate={jokeRate} gif={gif } />
         <Response aiResponse={aiResponse}  />
-        <Input setScore={setScore} score={score} setCount={setCount} count={count} setJokeRate={setJokeRate} setAiResponse={setAiResponse} />
+        <Input setGif={setGif } setScore={setScore} score={score} setCount={setCount} count={count} setJokeRate={setJokeRate} setAiResponse={setAiResponse} />
       </main>
 
       <aside>
