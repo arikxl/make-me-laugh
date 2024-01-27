@@ -1,16 +1,26 @@
 /* eslint-disable react/prop-types */
 
+import { useEffect } from "react";
+import { useState } from "react";
+
 const ScoreBar = ({ score }) => {
   
-  const record = 90;
+  const [record, setRecord] = useState(33);
   
   function numberToColorHsl(value) {
     // Convert value to a range between 0 and 120 (green to red in HSL)
     const hue = (value * 1.2).toString(10);
-
     // Return the HSL color string
     return `hsl(${hue}, 100%, 50%)`;
   }
+
+  const newRecord = () => {
+    setRecord(score)
+  }
+
+  useEffect(() => {
+    if(score > record) newRecord();
+  },[score])
   
   return (
     <section className="score-bar"
