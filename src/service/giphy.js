@@ -17,7 +17,6 @@ export const getGif = (searchTerm) => {
     })
     .then(data => {
         const url1 = data.data[0].images.original.url;
-        console.log('urlZZZZZ:', url1);
         return url1;
     })
     .catch(error => {

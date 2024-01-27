@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react"
 import JokeRate from "./JokeRate"
 import NoOfJokes from "./NoOfJokes"
+import NewGame from "./NewGame"
 
 const Gifs = ({ count, jokeRate, gif }) => {
   
@@ -12,7 +13,6 @@ const Gifs = ({ count, jokeRate, gif }) => {
 
   useEffect(() => {
     setGifToShow(gif)
-    console.log('gif:', gif)
   },[gif])
 
 
@@ -22,6 +22,7 @@ const Gifs = ({ count, jokeRate, gif }) => {
         backgroundImage: `url('${gifToShow}')`}}
     >
       <NoOfJokes count={count} />
+      <NewGame count={count} />
       <JokeRate jokeRate={jokeRate } />
     </section>
   )

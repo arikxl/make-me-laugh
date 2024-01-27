@@ -83,7 +83,7 @@ aside{
   flex: 1;
 }
 
-.gifs, .input, .response, .score-bar, .input button{
+.gifs, .input, .response, .score-bar, .input button ,.btn{
   border: solid white;
   border-radius:20px;
 
@@ -164,7 +164,7 @@ aside{
   padding: 5px 20px;
   text-align: right;
 }
-.input button{
+.input button, .btn{
   color:white;
 }
 
@@ -198,3 +198,11 @@ aside{
 
 
 
+
+
+.btn{
+  position: absolute;
+  bottom:10px;
+  left: 10px;
+  
+}

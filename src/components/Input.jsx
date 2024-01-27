@@ -30,7 +30,7 @@ const Input = ({ setGif, setScore, score, setJokeRate, setAiResponse, count, set
 
     fetchJokeRate();
     setTimeout(() => {
-      setText('');
+      // setText('');
     },5000);
   }
 
@@ -80,15 +80,15 @@ const Input = ({ setGif, setScore, score, setJokeRate, setAiResponse, count, set
   return (
     <section className="input">
       {/* <button onClick={() => setGif('aaaaaaaasddsdfsdf')}>AAA</button> */}
-      <button disabled={count > 10} onClick={startRecognition}>
+      <button disabled={count > 9} onClick={startRecognition}>
         🎙️
         <br />
         10s
       </button>
-      <textarea disabled={count > 10} rows="5" onChange={(e) => setText(e.target.value)} value={text} />
+      <textarea disabled={count > 9} rows="5" onChange={(e) => setText(e.target.value)} value={text} />
 
 
-      <button disabled={count > 10} onClick={handleGo}>GO!</button>
+      <button disabled={count > 9} onClick={handleGo}>GO!</button>
     </section>
   )
 }

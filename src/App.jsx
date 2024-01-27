@@ -14,10 +14,6 @@ function App() {
   const [aiResponse, setAiResponse] = useState('');
   const [gif, setGif] = useState();
   
-  useEffect(() => {
-    console.log('gifasasasa:', gif)
-    
-  },[gif])
   
   return (
     <div className="app">

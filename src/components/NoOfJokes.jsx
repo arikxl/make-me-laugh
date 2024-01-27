@@ -6,12 +6,12 @@ const NoOfJokes = ({ count }) => {
             {
                 count > 0
                     ? (<div
-                        className={`${count> 9
+                        className={`${count> 8
                             ? 'no-of-jokes small'
-                            : count === 6 || count === 9 ? 'underline no-of-jokes'
+                            : count === 6? 'underline no-of-jokes'
                             :'no-of-jokes'}`}
                     >
-                        { count >10 ? 'FINISH' : count === 10 ? 'Last One' : count}</div>)
+                        { count >9 ? 'FINISH' : count === 9 ? 'Last One' : count}</div>)
                     : null
             }
         </>

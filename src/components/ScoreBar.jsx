@@ -15,7 +15,7 @@ const ScoreBar = ({ score }) => {
   return (
     <section className="score-bar"
     style={{}}>
-    <p className="record" style={{top:`${100-record}px`}}>Record({record})</p>
+    <p className="record" style={{top:`${100-record}%`}}>Record({record})</p>
       <div className="inner-height"
         style={{
           height: `${score}%`, backgroundColor: numberToColorHsl(score) }}>
